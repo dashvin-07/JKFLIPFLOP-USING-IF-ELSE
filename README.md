@@ -1,4 +1,4 @@
-# JKFLIPFLOP-USING-IF-ELSE
+![Screenshot 2024-12-20 091905](https://github.com/user-attachments/assets/be868807-c7b7-4e21-b09d-4a231135a67f)# JKFLIPFLOP-USING-IF-ELSE
 
 **AIM:** 
 
@@ -33,16 +33,65 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
+Step1: Define the specifications and initialize the design.
+Step2: Declare the name of the entity and architecture by using VHDL source code.
+Step3: Write the source code in VERILOG.
+Step4: Check the syntax and debug the errors if found, obtain the synthesis report.
+Step5: Verify the output by simulating the source code.
+Step6: Write all possible combinations of input using the test bench.
+Step7: Obtain the place and route report.
 
-/* write all the steps invloved */
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+ Program for flipflops and verify its truth table in quartus using Verilog programming.
+ 
+Developed by:  DASHVIN S
+
+
+RegisterNumber:  24901048
+
+~~~
+module jk (
+input clk,    
+input reset,  
+input j,      
+input k,      
+output reg q, 
+output reg q_bar 
+);
+always @(posedge clk or posedge reset) begin
+if (reset) begin
+q <= 1'b0;       
+q_bar <= 1'b1;   
+end
+else begin
+case ({j, k})
+2'b00: ;              
+2'b01: begin          
+q <= 1'b0;
+q_bar <= 1'b1;
+end
+2'b10: begin          
+q <= 1'b1;
+q_bar <= 1'b0;
+end
+2'b11: begin          
+q <= ~q;
+q_bar <= ~q_bar;
+end
+endcase
+end
+end
+endmodule
+~~~
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot 2024-12-20 090400](https://github.com/user-attachments/assets/4152cdeb-07d9-48fd-a2fc-a1e3f4779ea9)
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot 2024-12-20 090417](https://github.com/user-attachments/assets/4d0260b3-0010-429f-b6c1-a992f2a4096b)
 
 **RESULTS**
+Thus the OUTPUT of JK Flip Flops are verified by synthesizing and simulating the VERILOG code
