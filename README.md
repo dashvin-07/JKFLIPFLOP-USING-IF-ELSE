@@ -1,4 +1,3 @@
-![Screenshot 2024-12-20 091905](https://github.com/user-attachments/assets/be868807-c7b7-4e21-b09d-4a231135a67f)# JKFLIPFLOP-USING-IF-ELSE
 
 **AIM:** 
 
